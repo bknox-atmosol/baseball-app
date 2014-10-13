@@ -1,0 +1,66 @@
+HTML,BODY {
+  height: 100%;
+  width: 100%;
+}
+BODY {
+  background: url('../imgs/green_cup.png');
+  font-size: 16px;
+}
+header {
+  background: #45423C;
+  box-shadow: 0 0 23px rgba(0, 0, 0, .2);
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px 0 0 0;
+  color: #EFE8B6;
+  text-align: center;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper h1 {
+  margin: 0;
+}
+
+.wrapper .sidebar .search {
+  width: 100%;
+  margin: 10px initial;
+  padding: 10px initial;
+  border-bottom: 1px solid #666;
+}
+
+.wrapper .sidebar {
+  background: #888;
+  min-height: 100%;
+  border-right: 1px solid #666;
+}
+
+.wrapper .sidebar a {
+  color: #FFF;
+  padding: 0 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.wrapper .sidebar,
+.wrapper .main {
+  min-height: 100%;
+}
+
+.wrapper .content {
+  margin: 0;
+  padding: 0;
+}

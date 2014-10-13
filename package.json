@@ -1,0 +1,22 @@
+{
+  "name": "baseball-app",
+  "version": "1.0.0",
+  "description": "This is a play ground for my angular code, it uses a rest server that connects to a baseball statistics database and serves information.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-static": "0.7.5",
+    "angular": "1.x.x",
+    "bootstrap": "3.x.x"
+  },
+  "keywords": [
+    "baseball",
+    "rest",
+    "server",
+    "node",
+    "agular"
+  ],
+  "author": "Benjamin Knox",
+  "license": "ISC"
+}

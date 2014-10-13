@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="baseballApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Feed API</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+  </head>
+  <body>
+     <section class="wrapper container row">
+       <div class="sidebar col-xs-4" ng-controller="teamsController">
+         <div class="search input-group input-group-sm">
+           <input type="text" ng-model="teamQuery" class="form-control" placeholder="Search">
+           <span class="input-group-addon">
+	     <span class="glyphicon glyphicon-search"></span>
+	   </span>
+	 </div>
+         <a ng-repeat="team in teams | filter:teamFilter(teamQuery)"
+	    href="/#team/{{ team[0].teamID }}-{{ team[0].yearID }}">{{ team[0].name }}</a>
+       </div>
+       <div class="content col-xs-8 row">
+         <header class="col-xs-12">
+           <h1>Baseball App</h1>
+         </header>
+         <div class="main col-xs-12" ng-controller="salaryController" ng-view>
+	 </div>
+       </div>
+     </section>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

@@ -51,8 +51,30 @@ var app = angular.module('baseballApp',['ngRoute']);
      $scope.fetch();
    }]);
 
-   app.controller('teamsController',['$scope', 'teams',
-   function($scope, teams){
+   app.controller('teamsController',['$scope', '$element', 'teams',
+   function($scope, $element, teams){
+     $scope.searchFocus = 0;
+
+     $scope.$watch('searchFocus',function(){
+       var elem = angular.element($element);
+       console.log(elem.find('.wrapper .sidebar'));
+       if($scope.searchFocus == 0) {
+         elem.removeClass('open');
+	} else {
+         elem.addClass('open');
+       }
+     });
+
+     /*$scope.$watch('searchBlur',function(){
+       alert('blur');
+     });
+     function(){
+       alert('focus');
+     };
+     function(){
+       alert('blur');
+     };*/
+
      $scope.teamFilter = function(str) {
        return function(team){
          return (

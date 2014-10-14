@@ -21,17 +21,22 @@
   </head>
   <body>
      <section class="wrapper container row">
-       <div class="sidebar col-xs-4" ng-controller="teamsController">
+       <div class="sidebar col-xs-12 col-md-4" ng-controller="teamsController">
          <div class="search input-group input-group-sm">
-           <input type="text" ng-model="teamQuery" class="form-control" placeholder="Search">
+           <input type="text" ng-focus="searchFocus = 1" ng-model="teamQuery" class="form-control" placeholder="Search">
            <span class="input-group-addon">
 	     <span class="glyphicon glyphicon-search"></span>
 	   </span>
 	 </div>
-         <a ng-repeat="team in teams | filter:teamFilter(teamQuery)"
-	    href="/#team/{{ team[0].teamID }}-{{ team[0].yearID }}">{{ team[0].name }}</a>
+	 <div class="team-list">
+           <a ng-repeat="team in teams | filter:teamFilter(teamQuery)"
+ 	     href="/#team/{{ team[0].teamID }}-{{ team[0].yearID }}">{{ team[0].name }}</a>
+	 </div>
+	 <button ng-click="searchFocus = 0" class="close hidden-md hidden-lg btn btn-primary">
+	   <span class="glyphicon glyphicon-chevron-up"></span>
+	 </button>
        </div>
-       <div class="content col-xs-8 row">
+       <div class="content col-xs-12 col-md-8 row">
          <header class="col-xs-12">
            <h1>Baseball App</h1>
          </header>
